@@ -1,0 +1,154 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.welcome {
+	min-height: 100vh;
+	height: 100vh;
+	position: relative;
+	overflow: hidden;
+
+	background-image: repeating-linear-gradient(
+			135deg,
+			rgba(240, 240, 240, 0.02) 0px,
+			rgba(240, 240, 240, 0.02) 21px,
+			rgba(224, 224, 224, 0.02) 21px,
+			rgba(224, 224, 224, 0.02) 42px,
+			rgba(208, 208, 208, 0.02) 42px,
+			rgba(208, 208, 208, 0.02) 63px,
+			rgba(192, 192, 192, 0.02) 63px,
+			rgba(192, 192, 192, 0.02) 84px,
+			rgba(175, 175, 175, 0.02) 84px,
+			rgba(175, 175, 175, 0.02) 105px,
+			rgba(159, 159, 159, 0.02) 105px,
+			rgba(159, 159, 159, 0.02) 126px,
+			rgba(143, 143, 143, 0.02) 126px,
+			rgba(143, 143, 143, 0.02) 147px,
+			rgba(127, 127, 127, 0.02) 147px,
+			rgba(127, 127, 127, 0.02) 168px
+		),
+		repeating-linear-gradient(
+			45deg,
+			rgba(232, 232, 232, 0.02) 0px,
+			rgba(232, 232, 232, 0.02) 21px,
+			rgba(209, 209, 209, 0.02) 21px,
+			rgba(209, 209, 209, 0.02) 42px,
+			rgba(185, 185, 185, 0.02) 42px,
+			rgba(185, 185, 185, 0.02) 63px,
+			rgba(162, 162, 162, 0.02) 63px,
+			rgba(162, 162, 162, 0.02) 84px,
+			rgba(138, 138, 138, 0.02) 84px,
+			rgba(138, 138, 138, 0.02) 105px,
+			rgba(115, 115, 115, 0.02) 105px,
+			rgba(115, 115, 115, 0.02) 126px,
+			rgba(91, 91, 91, 0.02) 126px,
+			rgba(91, 91, 91, 0.02) 147px,
+			rgba(68, 68, 68, 0.02) 147px,
+			rgba(68, 68, 68, 0.02) 168px
+		),
+		linear-gradient(90deg, #ffffff, #ffffff);
+}
+
+.blob {
+	position: absolute;
+
+	&--1 {
+		width: 10rem;
+
+		@include respond(desktop) {
+			width: 40rem;
+		}
+	}
+
+	&--2 {
+		right: 0;
+		bottom: 0;
+		width: 10rem;
+
+		@include respond(tab-port) {
+			width: 20rem;
+		}
+
+		@include respond(tab-land) {
+			width: 30rem;
+		}
+
+		@include respond(desktop) {
+			width: 40rem;
+		}
+	}
+}
+
+.container {
+	position: relative;
+	z-index: 100;
+	height: 90%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.information-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.enter-name {
+	font-family: 'Poppins';
+	font-size: 3em;
+	font-weight: 400;
+	color: $blue-dark;
+	padding: 0.5em;
+
+	@include respond(tab-port) {
+		font-size: 6rem;
+	}
+
+	@include respond(desktop) {
+		font-size: 4rem;
+	}
+}
+
+.form__name {
+	padding-top: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#name {
+	width: 100%;
+	border: none;
+	background-color: transparent;
+	border-bottom: 2px solid $yellow-dark;
+	padding: 1em;
+	padding-bottom: 0.5em;
+	font-size: 2rem;
+	color: $gray-lighter;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.form__button {
+	background-color: transparent;
+	border: 2px solid $yellow-dark;
+	border-radius: 10px;
+	color: $yellow-dark;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-top: 3rem;
+	cursor: pointer;
+	transition: 0.3s ease;
+
+	&:hover {
+		border: 2px solid $yellow-light;
+	}
+	&:active {
+		border: 2px solid $yellow-dark;
+	}
+}

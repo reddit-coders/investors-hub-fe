@@ -1,0 +1,13 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+	position: relative;
+	z-index: 100;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+}
