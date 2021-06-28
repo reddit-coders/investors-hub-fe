@@ -1,12 +1,12 @@
 import React from 'react'
 import Navigation from '../layout/Navigation'
 import EnterName from '../layout/EnterName'
-// import Blobs from '../layout/Blobs'
+import Blobs from '../layout/Blobs'
 
 function Welcome() {
 	return (
 		<div className='welcome'>
-			{/* <Blobs /> */}
+			<Blobs />
 			<Navigation />
 
 			<div className='container'>
