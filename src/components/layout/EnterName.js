@@ -14,7 +14,11 @@ export function EnterName(props) {
 	function onEnterKeyPress(event) {
 		const listener = event => {
 			if (event.code === 'Enter' || event.code === 'NumpadEnter') {
-				history.push('/Select')
+				if (event.target.value === '') {
+					alert('Please enter your name')
+				} else if (event.target.value.length > 1) {
+					history.push('/Select')
+				}
 			}
 		}
 
@@ -30,7 +34,7 @@ export function EnterName(props) {
 					id='name'
 					value={name}
 					onChange={event => saveToLocalStorage(event)}
-               onKeyUp={event => onEnterKeyPress(event)}
+					onKeyUp={event => onEnterKeyPress(event)}
 				/>
 
 				<ProceedButton />
