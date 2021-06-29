@@ -124,8 +124,9 @@
   border-bottom: 2px solid $yellow-dark;
   padding: 1em;
   padding-bottom: 0.5em;
-  font-size: 2rem;
-  color: $gray-lighter;
+  font-size: 2.5rem;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7);
 
   &:focus {
     outline: none;
