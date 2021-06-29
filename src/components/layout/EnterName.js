@@ -1,16 +1,30 @@
-import React from 'react'
+import { useState } from 'react'
 import ProceedButton from './ProceedButton'
 
-function EnterName() {
+export function EnterName(props) {
+	const [name, setName] = useState("");
+
+	function saveToLocalStorage(event) {
+		setName(event.target.value);
+		 window.localStorage.setItem('userName', event.target.value)
+	}
+
 	return (
 		<>
-			<form className='form__name'>
-            <input type='text' name='name' id='name' />
+			<div className='form__name'>
+            <input type='text' name='name' id='name' 
+						value={name}
+          	onChange={event => saveToLocalStorage(event)}
+						/>
             
-            <ProceedButton />
-			</form>
+            <ProceedButton/>
+			</div>
 		</>
 	)
+}
+
+EnterName.defaultProps = {
+	value: ''
 }
 
 export default EnterName

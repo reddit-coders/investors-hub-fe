@@ -1,8 +1,8 @@
 
-function ProceedButton() {
+function ProceedButton({ onClick }) {
 	return (
 		<>
-			<button type='submit' className='form__button'>
+			<button onClick={ onClick } className='form__button'>
 				Proceed
 			</button>
 		</>
