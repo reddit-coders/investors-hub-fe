@@ -63,10 +63,23 @@
 
 	&__main-heading {
 		font-family: 'Poppins';
-		font-size: 4rem;
+      padding-top: 1.5rem;
+		font-size: 2.5rem;
 		letter-spacing: 0.1em;
 		color: $blue-dark;
 		text-align: center;
+
+      @include respond(tab-port) {
+         font-size: 4rem;
+      }
+
+      @include respond(tab-land) {
+         font-size: 4.5rem;
+      }
+
+      @include respond(desktop) {
+         font-size: 5.5rem;
+      }
 	}
 
 	&__investor,
