@@ -1,8 +1,10 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
 
-.select__container {
-   min-height: 100vh;
+.info__container {
+	min-height: 100vh;
+	height: 100vh;
+
 	background-image: repeating-linear-gradient(
 			135deg,
 			rgba(240, 240, 240, 0.02) 0px,
@@ -44,82 +46,73 @@
 		linear-gradient(90deg, #ffffff, #ffffff);
 }
 
-.wrapper {
-	&__container {
+.information {
+	display: flex;
+	justify-content: center;
+
+	&__profile {
+		display: flex;
+	}
+
+	&__image {
+		width: 8rem;
+		height: 8rem;
+		margin: 1.5em;
+	}
+
+	&__headings {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
+	}
+
+	&__name {
+		font-size: 2.5rem;
+		font-family: 'Poppins';
+		font-weight: medium;
+		letter-spacing: 0.3rem;
+	}
+
+	&__type {
+		font-size: 1rem;
+		font-family: 'Ropa Sans';
+		letter-spacing: 0.2rem;
+		color: $yellow-light;
+	}
+
+	&__input-container {
+		padding-top: 2em;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		padding: 0.5em;
+		margin: 1em;
+	}
+
+	&__label {
+		font-size: 1rem;
+		font-family: 'Poppins';
+		letter-spacing: 0.1rem;
+		padding-bottom: 0.2em;
+      color: $blue-dark;
+      font-weight: medium;
+	}
+
+	&__input {
+		padding-left: 1em;
+		padding-right: 1em;
+		padding-top: 0.8em;
+		padding-bottom: 0.8em;
+		outline: none;
+		border: none;
+		border-radius: 20px;
+		background-color: $gray-lighter;
+      color: $gray-dark;
 	}
 }
 
-.select {
+#information__text-area {
 	padding: 2em;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	flex-flow: row wrap;
-	width: 80%;
-
-	&__main-heading {
-		font-family: 'Poppins';
-      padding-top: 1.5rem;
-		font-size: 2.5rem;
-		letter-spacing: 0.1em;
-		color: $blue-dark;
-		text-align: center;
-
-      @include respond(tab-port) {
-         font-size: 4rem;
-      }
-
-      @include respond(tab-land) {
-         font-size: 4.5rem;
-      }
-
-      @include respond(desktop) {
-         font-size: 5.5rem;
-      }
-	}
-
-	&__investor,
-	&__entrepreneur {
-		background-color: rgba(216, 213, 213, 0.363);
-		padding: 3em;
-		margin-top: 2em;
-		margin-bottom: 2em;
-		border-radius: 10px;
-		height: 30rem;
-		max-height: 30rem;
-		min-height: 20rem;
-		max-width: 20rem;
-		min-width: fit-content;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-around;
-		cursor: pointer;
-		transition: 0.4s ease-out;
-
-
-		&:hover {
-			transform: scale(1.1);
-		}
-	}
-
-	&__heading {
-		font-size: 3rem;
-		color: $blue-dark;
-		font-family: 'Poppins';
-		font-weight: 400;
-	}
-
-	&__description {
-		font-family: 'Ropa Sans';
-		font-size: 1.5rem;
-		color: black;
-		text-align: center;
-		padding-top: 0.5em;
-		max-width: 50ch;
-	}
 }
