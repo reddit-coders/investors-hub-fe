@@ -1,8 +1,14 @@
+import { useHistory } from 'react-router-dom'
 
 function ProceedButton({ onClick }) {
+	const history = useHistory()
+
+	const handleClick = () => {
+		history.push('/Select')
+	}
 	return (
 		<>
-			<button onClick={ onClick } className='form__button'>
+			<button className='form__button' onClick={() => handleClick()}>
 				Proceed
 			</button>
 		</>

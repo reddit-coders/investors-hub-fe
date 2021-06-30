@@ -1,0 +1,112 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.select__container {
+   min-height: 100vh;
+	background-image: repeating-linear-gradient(
+			135deg,
+			rgba(240, 240, 240, 0.02) 0px,
+			rgba(240, 240, 240, 0.02) 21px,
+			rgba(224, 224, 224, 0.02) 21px,
+			rgba(224, 224, 224, 0.02) 42px,
+			rgba(208, 208, 208, 0.02) 42px,
+			rgba(208, 208, 208, 0.02) 63px,
+			rgba(192, 192, 192, 0.02) 63px,
+			rgba(192, 192, 192, 0.02) 84px,
+			rgba(175, 175, 175, 0.02) 84px,
+			rgba(175, 175, 175, 0.02) 105px,
+			rgba(159, 159, 159, 0.02) 105px,
+			rgba(159, 159, 159, 0.02) 126px,
+			rgba(143, 143, 143, 0.02) 126px,
+			rgba(143, 143, 143, 0.02) 147px,
+			rgba(127, 127, 127, 0.02) 147px,
+			rgba(127, 127, 127, 0.02) 168px
+		),
+		repeating-linear-gradient(
+			45deg,
+			rgba(232, 232, 232, 0.02) 0px,
+			rgba(232, 232, 232, 0.02) 21px,
+			rgba(209, 209, 209, 0.02) 21px,
+			rgba(209, 209, 209, 0.02) 42px,
+			rgba(185, 185, 185, 0.02) 42px,
+			rgba(185, 185, 185, 0.02) 63px,
+			rgba(162, 162, 162, 0.02) 63px,
+			rgba(162, 162, 162, 0.02) 84px,
+			rgba(138, 138, 138, 0.02) 84px,
+			rgba(138, 138, 138, 0.02) 105px,
+			rgba(115, 115, 115, 0.02) 105px,
+			rgba(115, 115, 115, 0.02) 126px,
+			rgba(91, 91, 91, 0.02) 126px,
+			rgba(91, 91, 91, 0.02) 147px,
+			rgba(68, 68, 68, 0.02) 147px,
+			rgba(68, 68, 68, 0.02) 168px
+		),
+		linear-gradient(90deg, #ffffff, #ffffff);
+}
+
+.wrapper {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.select {
+	padding: 2em;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-flow: row wrap;
+	width: 80%;
+
+	&__main-heading {
+		font-family: 'Poppins';
+		font-size: 4rem;
+		letter-spacing: 0.1em;
+		color: $blue-dark;
+		text-align: center;
+	}
+
+	&__investor,
+	&__entrepreneur {
+		background-color: rgba(216, 213, 213, 0.363);
+		padding: 3em;
+		margin-top: 2em;
+		margin-bottom: 2em;
+		border-radius: 10px;
+		height: 30rem;
+		max-height: 30rem;
+		min-height: 20rem;
+		max-width: 20rem;
+		min-width: fit-content;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		cursor: pointer;
+		transition: 0.4s ease-out;
+
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	&__heading {
+		font-size: 3rem;
+		color: $blue-dark;
+		font-family: 'Poppins';
+		font-weight: 400;
+	}
+
+	&__description {
+		font-family: 'Ropa Sans';
+		font-size: 1.5rem;
+		color: black;
+		text-align: center;
+		padding-top: 0.5em;
+		max-width: 50ch;
+	}
+}
