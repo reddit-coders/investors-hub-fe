@@ -1,2 +1,118 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
+
+.info__container {
+	min-height: 100vh;
+	height: 100vh;
+
+	background-image: repeating-linear-gradient(
+			135deg,
+			rgba(240, 240, 240, 0.02) 0px,
+			rgba(240, 240, 240, 0.02) 21px,
+			rgba(224, 224, 224, 0.02) 21px,
+			rgba(224, 224, 224, 0.02) 42px,
+			rgba(208, 208, 208, 0.02) 42px,
+			rgba(208, 208, 208, 0.02) 63px,
+			rgba(192, 192, 192, 0.02) 63px,
+			rgba(192, 192, 192, 0.02) 84px,
+			rgba(175, 175, 175, 0.02) 84px,
+			rgba(175, 175, 175, 0.02) 105px,
+			rgba(159, 159, 159, 0.02) 105px,
+			rgba(159, 159, 159, 0.02) 126px,
+			rgba(143, 143, 143, 0.02) 126px,
+			rgba(143, 143, 143, 0.02) 147px,
+			rgba(127, 127, 127, 0.02) 147px,
+			rgba(127, 127, 127, 0.02) 168px
+		),
+		repeating-linear-gradient(
+			45deg,
+			rgba(232, 232, 232, 0.02) 0px,
+			rgba(232, 232, 232, 0.02) 21px,
+			rgba(209, 209, 209, 0.02) 21px,
+			rgba(209, 209, 209, 0.02) 42px,
+			rgba(185, 185, 185, 0.02) 42px,
+			rgba(185, 185, 185, 0.02) 63px,
+			rgba(162, 162, 162, 0.02) 63px,
+			rgba(162, 162, 162, 0.02) 84px,
+			rgba(138, 138, 138, 0.02) 84px,
+			rgba(138, 138, 138, 0.02) 105px,
+			rgba(115, 115, 115, 0.02) 105px,
+			rgba(115, 115, 115, 0.02) 126px,
+			rgba(91, 91, 91, 0.02) 126px,
+			rgba(91, 91, 91, 0.02) 147px,
+			rgba(68, 68, 68, 0.02) 147px,
+			rgba(68, 68, 68, 0.02) 168px
+		),
+		linear-gradient(90deg, #ffffff, #ffffff);
+}
+
+.information {
+	display: flex;
+	justify-content: center;
+
+	&__profile {
+		display: flex;
+	}
+
+	&__image {
+		width: 8rem;
+		height: 8rem;
+		margin: 1.5em;
+	}
+
+	&__headings {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	&__name {
+		font-size: 2.5rem;
+		font-family: 'Poppins';
+		font-weight: medium;
+		letter-spacing: 0.3rem;
+	}
+
+	&__type {
+		font-size: 1rem;
+		font-family: 'Ropa Sans';
+		letter-spacing: 0.2rem;
+		color: $yellow-light;
+	}
+
+	&__input-container {
+		padding-top: 2em;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		padding: 0.5em;
+		margin: 1em;
+	}
+
+	&__label {
+		font-size: 1rem;
+		font-family: 'Poppins';
+		letter-spacing: 0.1rem;
+		padding-bottom: 0.2em;
+      color: $blue-dark;
+      font-weight: medium;
+	}
+
+	&__input {
+		padding-left: 1em;
+		padding-right: 1em;
+		padding-top: 0.8em;
+		padding-bottom: 0.8em;
+		outline: none;
+		border: none;
+		border-radius: 20px;
+		background-color: $gray-lighter;
+      color: $gray-dark;
+	}
+}
+
+#information__text-area {
+	padding: 2em;
+}
