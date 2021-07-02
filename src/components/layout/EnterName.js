@@ -12,17 +12,13 @@ export function EnterName(props) {
 	}
 
 	function onEnterKeyPress(event) {
-		const listener = event => {
-			if (event.code === 'Enter' || event.code === 'NumpadEnter') {
-				if (event.target.value === '') {
-					alert('Please enter your name')
-				} else if (event.target.value.length > 1) {
-					history.push('/Select')
-				}
+		if (event.code === 'Enter' || event.code === 'NumpadEnter') {
+			if (event.target.value === '') {
+				alert('Please enter your name')
+			} else if (event.target.value.length >= 1) {
+				history.push('/Select')
 			}
 		}
-
-		document.addEventListener('keydown', listener)
 	}
 
 	return (
