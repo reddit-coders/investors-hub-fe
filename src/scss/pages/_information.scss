@@ -49,15 +49,35 @@
 .information {
 	display: flex;
 	justify-content: center;
+	padding: 2em;
+
+	&__container {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		// align-items: center;
+		padding-left: 0.5em;
+
+		@include respond(tab-land) {
+			width: 60%;
+		}
+	}
 
 	&__profile {
 		display: flex;
+      justify-content: center;
 	}
 
 	&__image {
-		width: 8rem;
-		height: 8rem;
-		margin: 1.5em;
+		width: 5rem;
+		height: 5rem;
+		margin: 1em;
+
+		@include respond(desktop) {
+			width: 6rem;
+			height: 6rem;
+			margin: 2em;
+		}
 	}
 
 	&__headings {
@@ -71,6 +91,17 @@
 		font-family: 'Poppins';
 		font-weight: medium;
 		letter-spacing: 0.3rem;
+
+		@include respond(tab-port) {
+			font-size: 3rem;
+		}
+
+		@include respond(tab-land) {
+			font-size: 3.4rem;
+		}
+		@include respond(desktop) {
+			font-size: 3.8rem;
+		}
 	}
 
 	&__type {
@@ -78,17 +109,39 @@
 		font-family: 'Ropa Sans';
 		letter-spacing: 0.2rem;
 		color: $yellow-light;
+
+		@include respond(tab-port) {
+			font-size: 2rem;
+		}
+
+		@include respond(tab-land) {
+			font-size: 2.2rem;
+		}
 	}
 
 	&__input-container {
-		padding-top: 2em;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		justify-content: center;
+		padding: 2em;
+		width: 100%;
+
+      @include respond(desktop) {
+         align-items: center;
+      }
 	}
 
 	&__form {
 		display: flex;
 		flex-direction: column;
 		padding: 0.5em;
-		margin: 1em;
+		margin: 0.3em;
+		width: 100%;
+
+		@include respond(tab-land) {
+			width: 70%;
+		}
 	}
 
 	&__label {
@@ -96,8 +149,8 @@
 		font-family: 'Poppins';
 		letter-spacing: 0.1rem;
 		padding-bottom: 0.2em;
-      color: $blue-dark;
-      font-weight: medium;
+		color: $blue-dark;
+		font-weight: medium;
 	}
 
 	&__input {
@@ -109,7 +162,44 @@
 		border: none;
 		border-radius: 20px;
 		background-color: $gray-lighter;
-      color: $gray-dark;
+		color: $gray-dark;
+	}
+
+	&__button {
+		background-color: transparent;
+		border: 2px solid $yellow-dark;
+		border-radius: 10px;
+		color: $yellow-dark;
+		padding-left: 2.5em;
+		padding-right: 2.5em;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		margin-top: 3rem;
+		cursor: pointer;
+		transition: 0.3s ease;
+		width: 100%;
+
+		&:hover {
+			border: 2px solid $yellow-light;
+		}
+		&:active {
+			border: 2px solid $yellow-dark;
+		}
+
+		@include respond(tab-land) {
+			width: 40%;
+		}
+	}
+
+	&__illustration-container {
+		display: none;
+		width: 50%;
+		height: 50rem;
+      padding: 2em;
+
+		@include respond(desktop) {
+			display: flex;
+		}
 	}
 }
 

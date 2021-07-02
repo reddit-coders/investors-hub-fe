@@ -6,13 +6,13 @@ function Information() {
 			<Navigation />
 
 			<div className='information'>
-				<div>
+				<div className='information__container'>
 					<div className='information__profile'>
-						<img
+						{/* <img
 							src={process.env.PUBLIC_URL + '/assets/profile.svg'}
 							alt='Profile'
 							className='information__image'
-						/>
+						/> */}
 						<div className='information__headings'>
 							<h3 className='information__name'>Timothy James</h3>
 							<h5 className='information__type'>Investor</h5>
@@ -51,15 +51,18 @@ function Information() {
 								id='information__text-area'
 								className='information__input'
 								cols='30'
-								rows='10'
+								rows='5'
 							></textarea>
 						</div>
 
-                  <div>
-                     <button type="submit" className='form__button'>Submit</button>
+                  <div className='information__form'>
+                     <button type="submit" className='information__button'>Submit</button>
                   </div>
 					</div>
 				</div>
+            <div className='information__illustration-container'>
+               <img src={process.env.PUBLIC_URL + '/assets/form.svg'} alt="form.svg" className='information__illustration'/>
+            </div>
 			</div>
 		</div>
 	)
