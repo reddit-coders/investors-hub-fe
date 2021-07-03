@@ -1,30 +1,38 @@
 import Navigation from '../layout/Navigation'
-import { useState } from 'react'
+import { ChangeEvent, useRef, useState } from 'react'
+import { useEffect } from 'react'
 
 function Information() {
+	const userTypeGetter = localStorage.getItem('userType') || '';
 	const [name, setName] = useState('')
 	const [location, setLocation] = useState('')
 	const [email, setEmail] = useState('')
 	const [bio, setBio] = useState('')
-
-	function saveNameToLocalStorage(event) {
-		setName(event.target.value)
-		window.localStorage.setItem('fullName', event.target.value)
+	const [userType, setUserType] = useState(userTypeGetter)
+	
+	enum UserInputTypes  {
+		BIO = 'bio',
+		EMAIL = 'email',
+		LOCATION = 'location',
+		FULL_NAME = 'fullName'
 	}
 
-	function saveLocationToLocalStorage(event) {
-		setLocation(event.target.value)
-		window.localStorage.setItem('location', event.target.value)
-	}
-
-	function saveEmailToLocalStorage(event) {
-		setEmail(event.target.value)
-		window.localStorage.setItem('email', event.target.value)
-	}
-
-	function saveBioToLocalStorage(event) {
-		setBio(event.target.value)
-		window.localStorage.setItem('bio', event.target.value)
+	function saveElementToLocalStorage(event: any, element: UserInputTypes): void {
+		window.localStorage.setItem(element, event.target.value)
+		switch(element) {
+			case UserInputTypes.BIO:
+				setBio(event.target.value);
+				break;
+			case UserInputTypes.EMAIL:
+				setEmail(event.target.value);
+				break;
+			case UserInputTypes.LOCATION:
+				setLocation(event.target.value);
+				break;
+			case UserInputTypes.FULL_NAME:
+				setName(event.target.value);
+				break;
+		}
 	}
 
 	return (
@@ -34,14 +42,14 @@ function Information() {
 			<div className='information'>
 				<div className='information__container'>
 					<div className='information__profile'>
-						{/* <img
+						<img
 							src={process.env.PUBLIC_URL + '/assets/profile.svg'}
 							alt='Profile'
 							className='information__image'
-						/> */}
+						/>
 						<div className='information__headings'>
 							<h3 className='information__name'>Timothy James</h3>
-							<h5 className='information__type'>Investor</h5>
+							<h5 className='information__type'>{userType}</h5>
 						</div>
 					</div>
 
@@ -54,7 +62,7 @@ function Information() {
 								type='text'
 								name='name'
 								className='information__input'
-                        onChange={event => saveNameToLocalStorage(event)}
+                        onChange={event => saveElementToLocalStorage(event, UserInputTypes.FULL_NAME)}
 							/>
 						</div>
 						<div className='information__form'>
@@ -65,7 +73,7 @@ function Information() {
 								type='text'
 								name='location'
 								className='information__input'
-                        onChange={event => saveLocationToLocalStorage(event)}
+                        onChange={event => saveElementToLocalStorage(event, UserInputTypes.LOCATION)}
 							/>
 						</div>
 						<div className='information__form'>
@@ -76,7 +84,7 @@ function Information() {
 								type='email'
 								name='email'
 								className='information__input'
-                        onChange={event => saveEmailToLocalStorage(event)}
+                        onChange={event => saveElementToLocalStorage(event, UserInputTypes.EMAIL)}
 							/>
 						</div>
 						<div className='information__form'>
@@ -87,9 +95,8 @@ function Information() {
 								name='bio'
 								id='information__text-area'
 								className='information__input'
-								cols='30'
-								rows='5'
-                        onChange={event => saveBioToLocalStorage(event)}
+							
+                        onChange={event => saveElementToLocalStorage(event, UserInputTypes.BIO)}
 							></textarea>
 						</div>
 
