@@ -2,6 +2,7 @@ import Navigation from '../layout/Navigation';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { UserInputTypes, setPlaceholderOnMultiline, userTypeGetter, userNameGetter } from './Information.utils'
+import React, { Component } from 'react';
 
 function Information()
 {
@@ -44,65 +45,65 @@ function Information()
 		<div className="info__container">
 			<Navigation />
 
-			<div className="information">
-				<div className="information__container">
-					<div className="information__profile">
+			<div className="informationn">
+				<div className="informationn__container">
+					<div className="informationn__profile">
 						<img
 							src={process.env.PUBLIC_URL + '/assets/profile.svg'}
 							alt="Profile"
-							className="information__image"
+							className="informationn__image"
 						/>
-						<div className="information__headings">
-							<h3 className="information__name">{userName}</h3>
-							<h5 className="information__type">{userType}</h5>
+						<div className="informationn__headings">
+							<h3 className="informationn__name">{userName}</h3>
+							<h5 className="informationn__type">{userType}</h5>
 						</div>
 					</div>
 
-					<div className="information__input-container">
-						<div className="information__form">
-							<label htmlFor="name" className="information__label">
+					<div className="informationn__input-container">
+						<div className="informationn__form">
+							<label htmlFor="name" className="informationn__label">
 								Full Name
 							</label>
 							<input
 								type="text"
 								name="name"
-								className="information__input"
+								className="informationn__input"
 								placeholder="Your real full name"
 								onChange={(event) => saveElementToLocalStorage(event, UserInputTypes.FULL_NAME)}
 							/>
 						</div>
-						<div className="information__form">
-							<label htmlFor="location" className="information__label">
+						<div className="informationn__form">
+							<label htmlFor="location" className="informationn__label">
 								Location
 							</label>
 							<input
 								type="text"
 								name="location"
-								className="information__input"
+								className="informationn__input"
 								placeholder="City and country"
 								onChange={(event) => saveElementToLocalStorage(event, UserInputTypes.LOCATION)}
 							/>
 						</div>
-						<div className="information__form">
-							<label htmlFor="email" className="information__label">
+						<div className="informationn__form">
+							<label htmlFor="email" className="informationn__label">
 								Email
 							</label>
 							<input
 								type="email"
 								name="email"
-								className="information__input"
+								className="informationn__input"
 								placeholder="Your email address"
 								onChange={(event) => saveElementToLocalStorage(event, UserInputTypes.EMAIL)}
 							/>
 						</div>
-						<div className="information__form">
-							<label htmlFor="bio" className="information__label">
+						<div className="informationn__form">
+							<label htmlFor="bio" className="informationn__label">
 								Bio
 							</label>
 							<textarea
 								name="bio"
-								id="information__text-area"
-								className="information__input"
+								id="informationn__text-area"
+								className="informationn__input"
 								rows={rows}
 								cols={cols}
 								placeholder="Type some general information about yourself. \nHobbies, interests and little details about your cat are all welcome!"
@@ -110,18 +111,18 @@ function Information()
 							></textarea>
 						</div>
 
-						<div className="information__form">
-							<button type="submit" className="information__button">
+						<div className="informationn__form">
+							<button type="submit" className="informationn__button">
 								Submit
 							</button>
 						</div>
 					</div>
 				</div>
-				<div className="information__illustration-container">
+				<div className="informationn__illustration-container">
 					<img
 						src={process.env.PUBLIC_URL + '/assets/form.svg'}
 						alt="form.svg"
-						className="information__illustration"
+						className="informationn__illustration"
 					/>
 				</div>
 			</div>

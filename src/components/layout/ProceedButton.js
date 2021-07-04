@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom'
+import { React } from 'react'
 
-function ProceedButton({ onClick }) {
+function ProceedButton({ }) {
 	const history = useHistory()
 
 	const handleClick = () => {

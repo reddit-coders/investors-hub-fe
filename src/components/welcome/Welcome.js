@@ -2,9 +2,10 @@ import { useEffect, useRef } from 'react'
 import Navigation from '../layout/Navigation'
 import EnterName from '../layout/EnterName'
 import Blobs from '../layout/Blobs'
+import { React } from 'react'
 
 const Welcome = () => {
-
+	localStorage.clear();
 	const containerRef = useRef(null);
 	const inputNameContainerRef = useRef(null);
 

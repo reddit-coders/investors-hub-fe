@@ -1,4 +1,7 @@
-function Navigation() {
+import React, { Component } from 'react';
+
+function Navigation()
+{
 	return (
 		<>
 			<nav className='nav'>
@@ -10,9 +13,9 @@ function Navigation() {
 					/>
 				</div>
 
-            <div className='nav__profile-container'>
-               <img src={process.env.PUBLIC_URL + 'assets/profile.svg'} alt="my profile" className='nav__profile'/>
-            </div>
+				<div className='nav__profile-container'>
+					<img src={process.env.PUBLIC_URL + 'assets/profile.svg'} alt="my profile" className='nav__profile' />
+				</div>
 			</nav>
 		</>
 	)
