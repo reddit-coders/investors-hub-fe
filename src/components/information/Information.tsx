@@ -10,6 +10,9 @@ function Information() {
 	const [bio, setBio] = useState('')
 	const [userType, setUserType] = useState(userTypeGetter)
 	
+	const rows = 5;
+	const cols = 30;
+
 	enum UserInputTypes  {
 		BIO = 'bio',
 		EMAIL = 'email',
@@ -34,6 +37,17 @@ function Information() {
 				break;
 		}
 	}
+
+	function setPlaceholderOnMultiline(){
+		var textAreas = document.getElementsByTagName('textarea');
+		Array.prototype.forEach.call(textAreas, function(elem) {
+					elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
+		});
+	}
+
+	useEffect(() => {
+		setPlaceholderOnMultiline();
+  });
 
 	return (
 		<div className='info__container'>
@@ -62,7 +76,8 @@ function Information() {
 								type='text'
 								name='name'
 								className='information__input'
-                        onChange={event => saveElementToLocalStorage(event, UserInputTypes.FULL_NAME)}
+								placeholder='Your real full name'
+                onChange={event => saveElementToLocalStorage(event, UserInputTypes.FULL_NAME)}
 							/>
 						</div>
 						<div className='information__form'>
@@ -73,7 +88,8 @@ function Information() {
 								type='text'
 								name='location'
 								className='information__input'
-                        onChange={event => saveElementToLocalStorage(event, UserInputTypes.LOCATION)}
+								placeholder='City and country'
+								onChange={event => saveElementToLocalStorage(event, UserInputTypes.LOCATION)}
 							/>
 						</div>
 						<div className='information__form'>
@@ -84,7 +100,8 @@ function Information() {
 								type='email'
 								name='email'
 								className='information__input'
-                        onChange={event => saveElementToLocalStorage(event, UserInputTypes.EMAIL)}
+								placeholder='Your email address'
+								onChange={event => saveElementToLocalStorage(event, UserInputTypes.EMAIL)}
 							/>
 						</div>
 						<div className='information__form'>
@@ -95,8 +112,10 @@ function Information() {
 								name='bio'
 								id='information__text-area'
 								className='information__input'
-							
-                        onChange={event => saveElementToLocalStorage(event, UserInputTypes.BIO)}
+								rows={rows}
+								cols={cols}
+								placeholder='Type some general information about yourself. \nHobbies, interests and little details about your cat are all welcome!'
+								onChange={event => saveElementToLocalStorage(event, UserInputTypes.BIO)}
 							></textarea>
 						</div>
 
