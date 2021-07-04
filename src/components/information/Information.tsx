@@ -1,26 +1,19 @@
 import Navigation from '../layout/Navigation';
-import { ChangeEvent, useRef, useState } from 'react';
+import { useState } from 'react';
 import { useEffect } from 'react';
+import { UserInputTypes, setPlaceholderOnMultiline, userTypeGetter, userNameGetter } from './Information.utils'
 
 function Information()
 {
-	const userTypeGetter = localStorage.getItem('userType') || '';
 	const [name, setName] = useState('');
 	const [location, setLocation] = useState('');
 	const [email, setEmail] = useState('');
 	const [bio, setBio] = useState('');
 	const [userType, setUserType] = useState(userTypeGetter);
+	const [userName, setUserName] = useState(userNameGetter);
 
 	const rows = 5;
 	const cols = 30;
-
-	enum UserInputTypes
-	{
-		BIO = 'bio',
-		EMAIL = 'email',
-		LOCATION = 'location',
-		FULL_NAME = 'fullName',
-	}
 
 	function saveElementToLocalStorage(event: any, element: UserInputTypes): void
 	{
@@ -42,15 +35,6 @@ function Information()
 		}
 	}
 
-	function setPlaceholderOnMultiline()
-	{
-		var textAreas = document.getElementsByTagName('textarea');
-		Array.prototype.forEach.call(textAreas, function (elem)
-		{
-			elem.placeholder = elem.placeholder.replace(/\\n/g, '\n');
-		});
-	}
-
 	useEffect(() =>
 	{
 		setPlaceholderOnMultiline();
@@ -69,7 +53,7 @@ function Information()
 							className="information__image"
 						/>
 						<div className="information__headings">
-							<h3 className="information__name">Timothy James</h3>
+							<h3 className="information__name">{userName}</h3>
 							<h5 className="information__type">{userType}</h5>
 						</div>
 					</div>
