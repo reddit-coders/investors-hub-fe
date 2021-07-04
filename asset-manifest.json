@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/investors-hub-fe/static/css/main.1a9d62dc.chunk.css",
+    "main.js": "/investors-hub-fe/static/js/main.a082b488.chunk.js",
+    "main.js.map": "/investors-hub-fe/static/js/main.a082b488.chunk.js.map",
+    "runtime-main.js": "/investors-hub-fe/static/js/runtime-main.1bf99c45.js",
+    "runtime-main.js.map": "/investors-hub-fe/static/js/runtime-main.1bf99c45.js.map",
+    "static/js/2.0b53691f.chunk.js": "/investors-hub-fe/static/js/2.0b53691f.chunk.js",
+    "static/js/2.0b53691f.chunk.js.map": "/investors-hub-fe/static/js/2.0b53691f.chunk.js.map",
+    "static/js/3.b51465a3.chunk.js": "/investors-hub-fe/static/js/3.b51465a3.chunk.js",
+    "static/js/3.b51465a3.chunk.js.map": "/investors-hub-fe/static/js/3.b51465a3.chunk.js.map",
+    "index.html": "/investors-hub-fe/index.html",
+    "static/css/main.1a9d62dc.chunk.css.map": "/investors-hub-fe/static/css/main.1a9d62dc.chunk.css.map",
+    "static/js/2.0b53691f.chunk.js.LICENSE.txt": "/investors-hub-fe/static/js/2.0b53691f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1bf99c45.js",
+    "static/js/2.0b53691f.chunk.js",
+    "static/css/main.1a9d62dc.chunk.css",
+    "static/js/main.a082b488.chunk.js"
+  ]
+}
