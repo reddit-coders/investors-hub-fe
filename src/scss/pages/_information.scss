@@ -2,117 +2,211 @@
 @import '../abstracts/mixins';
 
 .info__container {
-	min-height: 100vh;
-	height: 100vh;
+    min-height: 110vh;
+    height: 110vh;
 
-	background-image: repeating-linear-gradient(
-			135deg,
-			rgba(240, 240, 240, 0.02) 0px,
-			rgba(240, 240, 240, 0.02) 21px,
-			rgba(224, 224, 224, 0.02) 21px,
-			rgba(224, 224, 224, 0.02) 42px,
-			rgba(208, 208, 208, 0.02) 42px,
-			rgba(208, 208, 208, 0.02) 63px,
-			rgba(192, 192, 192, 0.02) 63px,
-			rgba(192, 192, 192, 0.02) 84px,
-			rgba(175, 175, 175, 0.02) 84px,
-			rgba(175, 175, 175, 0.02) 105px,
-			rgba(159, 159, 159, 0.02) 105px,
-			rgba(159, 159, 159, 0.02) 126px,
-			rgba(143, 143, 143, 0.02) 126px,
-			rgba(143, 143, 143, 0.02) 147px,
-			rgba(127, 127, 127, 0.02) 147px,
-			rgba(127, 127, 127, 0.02) 168px
-		),
-		repeating-linear-gradient(
-			45deg,
-			rgba(232, 232, 232, 0.02) 0px,
-			rgba(232, 232, 232, 0.02) 21px,
-			rgba(209, 209, 209, 0.02) 21px,
-			rgba(209, 209, 209, 0.02) 42px,
-			rgba(185, 185, 185, 0.02) 42px,
-			rgba(185, 185, 185, 0.02) 63px,
-			rgba(162, 162, 162, 0.02) 63px,
-			rgba(162, 162, 162, 0.02) 84px,
-			rgba(138, 138, 138, 0.02) 84px,
-			rgba(138, 138, 138, 0.02) 105px,
-			rgba(115, 115, 115, 0.02) 105px,
-			rgba(115, 115, 115, 0.02) 126px,
-			rgba(91, 91, 91, 0.02) 126px,
-			rgba(91, 91, 91, 0.02) 147px,
-			rgba(68, 68, 68, 0.02) 147px,
-			rgba(68, 68, 68, 0.02) 168px
-		),
-		linear-gradient(90deg, #ffffff, #ffffff);
+    background-image: repeating-linear-gradient(
+            135deg,
+            rgba(240, 240, 240, 0.02) 0px,
+            rgba(240, 240, 240, 0.02) 21px,
+            rgba(224, 224, 224, 0.02) 21px,
+            rgba(224, 224, 224, 0.02) 42px,
+            rgba(208, 208, 208, 0.02) 42px,
+            rgba(208, 208, 208, 0.02) 63px,
+            rgba(192, 192, 192, 0.02) 63px,
+            rgba(192, 192, 192, 0.02) 84px,
+            rgba(175, 175, 175, 0.02) 84px,
+            rgba(175, 175, 175, 0.02) 105px,
+            rgba(159, 159, 159, 0.02) 105px,
+            rgba(159, 159, 159, 0.02) 126px,
+            rgba(143, 143, 143, 0.02) 126px,
+            rgba(143, 143, 143, 0.02) 147px,
+            rgba(127, 127, 127, 0.02) 147px,
+            rgba(127, 127, 127, 0.02) 168px
+        ),
+        repeating-linear-gradient(
+            45deg,
+            rgba(232, 232, 232, 0.02) 0px,
+            rgba(232, 232, 232, 0.02) 21px,
+            rgba(209, 209, 209, 0.02) 21px,
+            rgba(209, 209, 209, 0.02) 42px,
+            rgba(185, 185, 185, 0.02) 42px,
+            rgba(185, 185, 185, 0.02) 63px,
+            rgba(162, 162, 162, 0.02) 63px,
+            rgba(162, 162, 162, 0.02) 84px,
+            rgba(138, 138, 138, 0.02) 84px,
+            rgba(138, 138, 138, 0.02) 105px,
+            rgba(115, 115, 115, 0.02) 105px,
+            rgba(115, 115, 115, 0.02) 126px,
+            rgba(91, 91, 91, 0.02) 126px,
+            rgba(91, 91, 91, 0.02) 147px,
+            rgba(68, 68, 68, 0.02) 147px,
+            rgba(68, 68, 68, 0.02) 168px
+        ),
+        linear-gradient(90deg, #ffffff, #ffffff);
 }
 
-.information {
-	display: flex;
-	justify-content: center;
+.informationn {
+    display: flex;
+    justify-content: center;
+    padding: 2em;
 
-	&__profile {
-		display: flex;
-	}
+    &__container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-left: 0.5em;
 
-	&__image {
-		width: 8rem;
-		height: 8rem;
-		margin: 1.5em;
-	}
+        @include respond(tab-land) {
+            width: 60%;
+        }
+    }
 
-	&__headings {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
+    &__profile {
+        display: flex;
+        justify-content: center;
+    }
 
-	&__name {
-		font-size: 2.5rem;
-		font-family: 'Poppins';
-		font-weight: medium;
-		letter-spacing: 0.3rem;
-	}
+    &__image {
+        width: 5rem;
+        height: 5rem;
+        margin: 1em;
 
-	&__type {
-		font-size: 1rem;
-		font-family: 'Ropa Sans';
-		letter-spacing: 0.2rem;
-		color: $yellow-light;
-	}
+        @include respond(desktop) {
+            width: 6rem;
+            height: 6rem;
+            margin: 2em;
+        }
+    }
 
-	&__input-container {
-		padding-top: 2em;
-	}
+    &__headings {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-	&__form {
-		display: flex;
-		flex-direction: column;
-		padding: 0.5em;
-		margin: 1em;
-	}
+    &__name {
+        font-size: 2.5rem;
+        font-family: 'Poppins';
+        font-weight: medium;
+        letter-spacing: 0.3rem;
 
-	&__label {
-		font-size: 1rem;
-		font-family: 'Poppins';
-		letter-spacing: 0.1rem;
-		padding-bottom: 0.2em;
-      color: $blue-dark;
-      font-weight: medium;
-	}
+        @include respond(tab-port) {
+            font-size: 3rem;
+        }
 
-	&__input {
-		padding-left: 1em;
-		padding-right: 1em;
-		padding-top: 0.8em;
-		padding-bottom: 0.8em;
-		outline: none;
-		border: none;
-		border-radius: 20px;
-		background-color: $gray-lighter;
-      color: $gray-dark;
-	}
+        @include respond(tab-land) {
+            font-size: 3.4rem;
+        }
+        @include respond(desktop) {
+            font-size: 3.8rem;
+        }
+    }
+
+    &__type {
+        font-size: 1rem;
+        font-family: 'Ropa Sans';
+        letter-spacing: 0.2rem;
+        color: $yellow-light;
+        text-transform: capitalize;
+
+        @include respond(tab-port) {
+            font-size: 2rem;
+        }
+
+        @include respond(tab-land) {
+            font-size: 2.2rem;
+        }
+    }
+
+    &__input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        margin-top: 50px;
+        padding: 2em;
+        width: 100%;
+
+        @include respond(desktop) {
+            align-items: center;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5em;
+        margin: 0.8em 0.3em;
+        width: 100%;
+
+        @include respond(tab-land) {
+            width: 70%;
+        }
+    }
+
+    &__label {
+        font-size: 1rem;
+        font-family: 'Poppins';
+        letter-spacing: 0.2rem;
+        padding-bottom: 1em;
+        margin-left: 1em;
+        color: $blue-dark;
+        font-weight: bold;
+    }
+
+    &__input {
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 0.8em;
+        padding-bottom: 0.8em;
+        outline: none;
+        border: none;
+        border-radius: 20px;
+        background-color: $gray-lighter;
+        color: $gray-dark;
+    }
+
+    &__button {
+        background-color: transparent;
+        border: 2px solid $yellow-dark;
+        border-radius: 10px;
+        color: $yellow-dark;
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        margin-top: 3rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+        width: 100%;
+
+        &:hover {
+            border: 2px solid $yellow-light;
+        }
+        &:active {
+            border: 2px solid $yellow-dark;
+        }
+
+        @include respond(tab-land) {
+            width: 40%;
+        }
+    }
+
+    &__illustration-container {
+        display: none;
+        width: 50%;
+        height: 50rem;
+        padding: 2em;
+        margin-top: 50px;
+
+        @include respond(desktop) {
+            display: flex;
+        }
+    }
 }
 
-#information__text-area {
-	padding: 2em;
-}
+//! Removed this, I don't think we need it ( misplaces the placeholder ) -- REMOVE SOON
+// #information__text-area {
+//     padding: 2em;
+// }

@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import ProceedButton from './ProceedButton'
 import { useHistory } from 'react-router-dom'
+import { React } from 'react'
+
 
 export function EnterName(props) {
 	const [name, setName] = useState('')
