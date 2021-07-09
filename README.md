@@ -1,6 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Here is the design: https://www.figma.com/file/n75Tkjs2hf6RAQU0iSp4Hl/Idealist?node-id=0%3A1
 
 ## Available Scripts
 
